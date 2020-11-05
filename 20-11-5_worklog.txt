@@ -1,0 +1,5 @@
+﻿早上：学习了一下grabana等软件的使用
+
+下午：rock gong与我讲述了一下我的具体任务，在contos系统上安装docker，并建立nginx服务。所以下午在装vm与contos。
+
+下面无了。
