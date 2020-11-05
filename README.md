@@ -1,2 +1,2 @@
 # LianWei-worklog
-will submit some worklogs to github
+will submit some work logs to github
