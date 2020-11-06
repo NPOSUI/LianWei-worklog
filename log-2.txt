@@ -1,0 +1,4 @@
+#早上
+##完成centos系统安装，并安装docker，下载nginx镜像
+#下午
+##完成nginx服务的启动,了解docker深入一点的知识与操作命令
