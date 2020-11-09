@@ -1,0 +1,12 @@
+一、docker-container数据存储持久化
+1.挂载配置文件等文件方法。如果启动nginx服务时需要替换.config文件，可选择挂载的方式。即将docker的宿主机上的nginx的.config文件覆盖docker里的nginx容器内的.config文件。且在docker内的nginx容器修改.config相当于修改了宿主机上的.config文件。具体实现：docker run -dit --name [container_name] -v [宿主机目录]:[容器目录] -p [宿主机端口]:[容器端口] [镜像]。注：需要挂载多少个宿主本地目录就有多少个-v。
+
+2.采用挂载volume的方式，使容器数据持久化。具体实现与一方法类似：docker run -dit --name [container_name] -v [volume目录名]:[container_目录名] -p [宿主机端口]:[容器端口] [镜像]。vloume目录在/var/bin/nginx/volumes/下。注：需要建多少个volume就有多少个-v。
+
+3.使container(容器)转化为image(镜像),docker commit [container ID] [imagename]:[version]。version为tag或者版本号。不写默认为latest。
+
+二、dockerfile build image
+现在本地建立一个目录dockerfile，在dockerfile中创建一个dockerfile文件，写入shell脚本等。使用docker build -t [newimage-name]:[latest] [.] 注：“.”表示上下文目录。
+
+三、docker compose使用
+编辑dockerfile文件与dcoker-compose.yml文件，使用docker-compose up -d 起了一个nginx服务。
